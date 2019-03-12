@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex8</title>
+
+
+    <script type="text/javascript">
+
+        //Ex class,extends,get,set and super keywords
+
+        class Vehicle{
+            constructor(type){
+                Vehicle.VehicleCount++;
+                this.type = type;
+            }
+
+            drive(){
+                console.log("Vehicle is driving");
+            }
+        }
+
+        Vehicle.VehicleCount = 0;
+        const vehicle = new Vehicle("Toyota:");
+        vehicle.drive();
+        console.log("Vehicle Count = "+Vehicle.VehicleCount);
+        class Car extends Vehicle{
+            constructor(type){
+                super(type);
+            }
+
+            balanceWheels(){
+                console.log("Wheels are balanced");
+            }
+
+
+        }
+
+        const car = new Car ("Nissan)");
+        car.drive();
+        car.balanceWheels();
+        console.log("Vehicle Count = "+Vehicle.VehicleCount)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

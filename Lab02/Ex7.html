@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex7</title>
+
+    <script type="text/javascript">
+
+
+        //function to call GitHub API (https://api.github.com/users) and get users.
+        //● Try to understand the functionality of Promises.
+        //● Print all users to console.
+        //Using Async/wait
+
+        async  function fetchUserAsync() {
+            const response = await fetch("https://api.github.com/users");
+            const json = await response.json();
+            console.log(json);
+
+        }
+
+        fetchUserAsync();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

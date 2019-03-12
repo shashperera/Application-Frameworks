@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex1</title>
+
+    <script type="text/javascript">
+
+
+        //Declare a variable named vehicleName in the window object (var) and assign value
+        //‘Toyota’ to it. This a global variable declaration.
+        var vehicleName = "Toyota";
+
+
+        //Declare a function named printVehicleNameOuter to print out the vehicle name. (Use this.vehicleName, since the variable you declared in the above step is a global variable assigned to window object. In global scope this points to window object. In the browser
+        // scope global object is window object and all the global variable and function declarations are assigned to window object).
+        //     ○ Test this by printing this and window object to console. And verify that they both prints window object.
+        //     ○ Check the vehicleName and the printVehicleNameOuter you declared are in the printed window object.
+
+        function printVehicleNameOuter(){
+            console.log(this.vehicleName);
+        }
+
+        console.log(this);;
+
+        //Call the function printVehicleNameOuter and verify it is printing ‘Toyota’.
+        printVehicleNameOuter();
+
+        //EX 01
+        // var vehicle = {
+        //     vehicleName: "Nissan",
+        //     printVehicleNameInner: printVehicleNameOuter
+        //
+        //
+        //
+        // };
+        //
+        // vehicle.printVehicleNameInner();
+
+        var vehicle = {
+            vehicleName : "Nissan",
+            printVehicleNameInner : function (){
+                return function (){
+                    console.log(this.vehicleName);
+                }
+            }
+        };
+
+        console.log("01st execute type")
+        var execute = vehicle.printVehicleNameInner();
+
+        //execute is assigned the function returned from printVehiceNameInner func
+       // execute();
+
+        //calling execute func using cal methd
+        execute.call(vehicle);
+
+        console.log("02 execute type using bind");
+        var execute = vehicle.printVehicleNameInner().bind(vehicle);
+        execute();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

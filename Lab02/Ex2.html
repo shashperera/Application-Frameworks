@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex2</title>
+
+    <script type="text/javascript">
+
+    //Create a function named taxCalculator which accepts the tax percentage as an argument
+
+    function taxCalculator(tax){
+        var taxPercentage = tax;
+
+    // taxCalculator should return another function which accepts the amount as an argument and returns calculated tax percentage (amount*taxPercentage/100).
+
+        return function(amount){
+            return amount * tax /100;
+        }
+    }
+
+    //Call taxCalculator function and assigned the returned value to a variable.
+
+        var calculator = taxCalculator(10);
+
+    //Now, call that variable (it is a function now) with different amounts and get tax value calculated.
+    //Notice how you have encapsulated the tax percentage and calculation from consumers.
+    //Now consumers can calculate the tax percentage without the knowledge of tax percentage and calculation.
+        console.log(calculator(90));
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

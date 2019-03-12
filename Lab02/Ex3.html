@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex3</title>
+    <script type="text/javascript">
+
+        //function to call GitHub API (https://api.github.com/users) and get users.
+
+        function fetchUsers(){
+            fetch("https://api.github.com/users").then(function(response){
+              return response.json();
+            }).then(function(json){
+                console.log(json);
+            });
+        }
+
+
+        //Print all users to console.
+        fetchUsers();
+
+
+        //return fetched users and print it in the caller. Asynchronus execution of js and resolved using promises.
+
+        // function  fetchUsers() {
+        //     return fetch("https:://api.github.com/users").then(response => response.json());
+        //
+        // }
+        //
+        // fetchUsers().then(function (json) {
+        //     console.log(json);
+        //
+        // });
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex6</title>
+
+    <script type="text/javascript">
+
+    // arrow functions
+        function fetchUsers(){
+            return fetch("https://api.github.com/users")
+                .then(response => response.json());
+        }
+
+        fetchUsers().then(json =>{
+        console.log(json);
+        });
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
