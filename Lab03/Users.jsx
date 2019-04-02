@@ -1,16 +1,14 @@
-// Ex 10
-
-'use Strict';
+'use strict';
 
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import User from './User';
+import User from './User.jsx';
 
 export default class Users extends Component{
     static get propTypes(){
-        return{
-            users: PropTypes.array
+        return {
+            users : PropTypes.array
         }
     }
     constructor(props){
@@ -31,8 +29,10 @@ export default class Users extends Component{
                 {
                     users.map(user =>{
                         return <User key={user.id} user={user}/>
+
                     })
                 }
+
                 </tbody>
             </table>
         </div>
