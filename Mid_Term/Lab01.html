@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script type="text/javascript">
+
+        //01
+        var func = function () {
+            console.log("hello world")
+        }
+
+        function two(x){
+            x();
+            console.log("Hi two")
+        }
+
+        two(func);
+
+  //-----------------------------------------------------------------------------------------------------------------------------
+
+        //02
+        var obj = {
+            name : "sha",
+            age : 12,
+            add : "shjashd"
+
+
+        }
+        console.log(obj)
+
+
+ //-----------------------------------------------------------------------------------------------------------------------------
+
+        //03
+
+        var vehicleName = "ui";
+        function printVehicleName() {
+            console.log(this.vehicleName);
+        }
+
+        var Vehicle = {
+            vehicleName : "toyo",
+            getVehicleName : printVehicleName
+        }
+
+        printVehicleName();
+        Vehicle.getVehicleName();
+
+        var vehicle = {
+            vehicleName : "Nissan",
+            printVehicleNameInner : function (){
+                return function (){
+                    console.log(this.vehicleName);
+                }
+            }
+        };
+
+        console.log("02 execute type using bind");
+        var execute = vehicle.getVehicleName().bind(vehicle);
+        execute();
+
+
+ //-----------------------------------------------------------------------------------------------------------------------------
+
+        //04
+
+
+        function tax(per) {
+            var pp = per;
+
+            return function(amt){
+                return amt * pp /100;
+            };
+        };
+
+        var cal = tax(5);
+        console.log(cal(10000));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

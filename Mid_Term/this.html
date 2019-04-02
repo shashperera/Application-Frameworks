@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this keyword</title>
+
+
+
+    <script type="text/javascript">
+
+       var person = {
+           fname :"shu",
+           lname : "sha",
+
+           showFullName : function () {
+               console.log(this.fname+" "+this.lname);
+           }
+       }
+
+       person.showFullName();
+
+
+
+
+       //2
+
+       var fname = "la",
+           lname = "pa";
+
+       function showFullName() {
+           console.log(this.fname+" "+this.lname);
+       }
+
+       var person = {
+           fname :"shu",
+           lname : "sha",
+
+           showFullName : function () {
+               console.log(this.fname+" "+this.lname);
+           }
+       }
+
+
+       showFullName();
+       window.showFullName();
+       person.showFullName();
+
+       function makeAdder(x) {
+           return function(y) {
+               return x + y;
+           };
+       }
+
+       var add5 = makeAdder(5);
+       var add10 = makeAdder(10);
+
+       console.log(add5(2));  // 7
+       console.log(add10(2)); // 12
+    </script>
+
+</head>
+<body>
+
+
+
+
+</body>
+</html>
